@@ -7,7 +7,8 @@ messagebox.showinfo("Welcome", "Weather wizerd is on\n Press <ok> to continue")
 baseurl = "http://api.openweathermap.org/data/2.5/weather?q="
 
 
-weatherapi = "8e44efb0ae84f237a5d93f5f4d629433"
+weatherapi = ""
+# AS api key is secret so are not providing it.use fucntional api key to verify this program.
 
 place = simpledialog.askstring("location/place name", "For what location you want to get the Weather report ?")
 url = baseurl + place + "&appid=" + str(weatherapi) + "&units=metric"
