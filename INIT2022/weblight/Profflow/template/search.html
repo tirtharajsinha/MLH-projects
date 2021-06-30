@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/search.css">
+    <!-- JQuery css and javascript link -->
+
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Find user</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+
+            $("#search").autocomplete({
+                source: "{% url 'autocomplete'%}",
+                position: { my : "right+30 top", at: "right bottom" },
+                autoFocus: true
+                
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="bg">
+        <img src="/static/profflow logo.png" alt="" style="position: relative; top:200px;" width="200px" height="auto">
+        
+        <form action="/user/search" method="post">
+            {% csrf_token %}
+            <div class="box">
+                
+                <label for="tags"></label>
+                <input type="text" name="search" id="search" placeholder="Search User">
+                <button type="submit" class="text" title="search"><i class="fa fa-search-plus"></i></button>
+            </div>
+        </form>
+
+    </div>
+
+
+
+    <!-- javascript portion -->
+
+
+</body>
+
+</html>

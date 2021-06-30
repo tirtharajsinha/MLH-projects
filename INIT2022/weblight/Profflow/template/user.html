@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile.{{ user.get_username }}</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/user.css">
+    <style>
+        .sidenav{
+            overflow-y:scroll;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    
+    <div class="divider">
+        <div class="sidenav">
+            <h2><img src="/static/profflow logo.png" alt="" height="35px"></h2>
+            <h1 class="text-center hider"><img src="/static/profflow logo.png" alt="" height="100px"><br>Profflow</h1>
+            <br><br>
+            <hr>
+            <i class="far fa-user-circle" title="{{ user.get_username }}"> </i>
+            <p class="user"> welcome {{ user.get_username }} !!</p>
+            <hr><br>
+            <a href="/"><i class="fa fa-home"></i>
+                <p class="hider"> Home</p>
+                <a><br><br>
+                    <a href="/user/search"><i class="fa fa-search"></i>
+                        <p class="hider"> Find user</p>
+                    </a><br><br>
+                    <a href="/user/"><i class="fa fa-user"></i>
+                        <p class="hider"> Profile</p>
+                    </a><br><br>
+                    <a href="/user/update"><i class="fas fa-edit"></i>
+                        <p class="hider"> Manage your profflow</p>
+                    </a><br><br>
+                    <a href="/{{ user.get_username }}"><i class="fa fa-globe"> </i>
+                        <p class="hider">Your profflow</p>
+                    </a><br><br>
+                    <a href="/user/analytics"><i class="fa fa-bar-chart-o"> </i>
+                        <p class="hider">Analytics</p>
+                    </a><br>
+                    <hr>
+
+                    <a href="https://tirtharajsinha.github.io/webfiles/portfolio_v2.0/"><i class="fa fa-paper-plane"> </i>
+                        <p> Contact Developer</p>
+                    </a><br><br>
+                    <a href="/user/logout"><i class="fa fa-crosshairs"></i>
+                        <p> logout</p>
+                    </a><br><br>
+                    <a href="/user/deluser" style="color: red;" onclick="deluser()"><i class="fa fa-fire"></i>
+                        <p> Delete Account</p>
+                    </a><br><br><br>
+
+
+
+
+
+
+
+        </div>
+
+
+
+        <div class="userside">
+            <br>
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert {{ message.tags }} alert-info alert-dismissible fade show my-0 bg-cyan" role="alert">
+                <strong>{{ message }}</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {% endfor %}
+            {% endif %}
+            <h1 class="text-center welcome">Welcome back ! <span
+                    style="color:rgb(192, 50, 205); font-weight: bold;">{{user.get_username}}</span></h1>
+            <div class="userdata">
+                <div class="container pd-4 mb-5">
+                    <form class="form" method="POST" action="/user/" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="Username">Username [not editable]*</label>
+                            <p class="form-control" id="Username">{{user.get_username}}</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email address [Editable for first entry]</label>
+                            <input type="text" class="form-control" id="email" name="email"
+                                placeholder="Enter Email address" value="{{user.email}}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Last login [not editable]*</label>
+                            <p id="email" class="form-control">{{user.last_login}}</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Date Joined [not editable]*</label>
+                            <p id="email" class="form-control">{{user.date_joined}}</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="firstname">FirstName</label>
+                            <input type="text" class="form-control .bg-transparent" id="firstname" name="firstname"
+                                value="{{user.first_name}}" placeholder="Enter firstname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Lastname">lastName</label>
+                            <input type="text" class="form-control" id="lastname" name="lastname"
+                                placeholder="Enter LastName" value="{{user.last_name}}" required>
+                        </div>
+
+
+                        <button class="btn btn-primary" type="submit">Save</button>
+
+                    </form>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script>
+        function deluser(){
+            alert("Are sure, that you want to delete your account?");
+        }
+    </script>    
+</body>
+
+</html>

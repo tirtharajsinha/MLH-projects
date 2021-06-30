@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>profflow</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    
+    <link rel="icon" href="/static/profflow logo.png" sizes="32x32" type="image/png">
+
+</head>
+
+<body>
+    {% if messages %}
+    
+    {% for message in messages %}
+    
+    <div class="alert {{ message.tags }} alert-primary alert-dismissible fade show my-0 bg-cyan" role="alert">
+        {{message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    
+    {% endfor %}
+    {% endif %}
+    <div class="bg">
+        <a href="/user/login">
+            <p><i class="fa fa-sign-in"></i> Sign-in</p>
+        </a>
+
+        <h1 class="box"><img src="static/profflow logo.png" alt="" height="150px"> Profflow</h1>
+    </div>
+    <h1 class="h1">A free <span>portfolio builder</span> tool for community</h1>
+    <div class="first">
+        <div class="leftdes">
+            <h2>Great to show</h2>
+            Profflow comes with great design to impress community.
+            But the best part is you are going to use profflow for entirely free.
+            Best things comes with coaparation. So don't let your time to be wested
+            & <a href="#neon" style="text-decoration: none;"><span>get started</span></a> to build your profflow.
+
+
+        </div>
+        <img src="{% static 'profflow page.JPG' %}" alt="" class="rightimg">
+    </div>
+    <div class="second">
+        <div class="rightdes">
+            <h2>Easy to use</h2>
+            Profflow comes with great user experience for all type of user. <br>
+            This gonna be most exciting feature.profflow comes with two-way auth security. <br>
+            So be tensionless for your data leak. <br>
+            So don't let your time to be wested
+            & <a href="#neon" style="text-decoration: none;"><span>get started</span></a> to build your profflow.
+            <span id="neon"></span>
+
+
+        </div>
+        <img src="{% static 'update.jpg' %}" alt="" class="leftimg">
+    </div>
+
+    <div class="neon">
+        <h2>Like it? Excited ? Join Now and Get your Profflow for Free</h2><br>
+        <a href="/user/register" class="fa fa-user-plus">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Join Now
+        </a>
+        <a href="/user/search" class="fa fa-search-plus a2">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Find A User
+        </a>
+    </div>
+
+
+    <div class="expect">
+        <h1>You should Expect from Profflow</h1>
+        <div class="exp">
+            <div class="exp1">
+
+                <h2><i class="fa fa-mobile-phone"></i> Cross-browser & device use</h2>
+                you & your viewer can access profflow <br> in any borwser or device.
+            </div>
+            <div class="exp2">
+                <h2><i class="fa fa-lock"></i> Two-factor Auth</h2>
+                With Two-factor auth profile data gonna be<br> locked for un-authorised access.
+            </div>
+
+
+        </div>
+        <div class="exp">
+            <div class="exp1">
+
+                <h2><i class="fa fa-dollar"></i> Free use</h2>
+                You can use it for free of cost.Means no <br>cost for show-off.
+            </div>
+            <div class="exp2">
+                <h2><i class="fa fa-user-plus"></i> Easy to use</h2>
+                Profflow comes with greateasy to use UI,<br>for all type of user.
+            </div>
+
+
+        </div>
+        <div class="exp">
+            <div class="exp1">
+
+                <h2><i class="fa fa-themeisle"></i> Dark Theme</h2>
+                Every one likes dark theme, so we made profflow <br> attched with dark theme.
+            </div>
+            <div class="exp2">
+                <h2><i class="fa fa-database"></i> Unlimited data storage</h2>
+                In profflow there is no restriction on data. <br>
+                Now you can can show your all colours.
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+    <footer>
+        <div>
+            <p>Terms of Use</p>
+            <p>Privacy</p>
+            <p>Code of conduct</p>
+            <p>releses</p>
+            <p>FAQ</p>
+            <p>Contact</p>
+        </div>
+        <p>A <i class="fa fa-code"></i> product from Tirtharaj Sinha <i class="fa fa-star-o"></i> <br>
+            inspired from <a href="https://atom.io/"
+                style="text-decoration: none; color: yellowgreen;"><b>atom.io</b></a></p>
+    </footer>
+    <script src="static/vanilla-tilt.min.js" type="text/javascript"></script>
+    <script>
+        VanillaTilt.init(document.querySelectorAll(".box"), {
+            max: 25,
+            speed: 600
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

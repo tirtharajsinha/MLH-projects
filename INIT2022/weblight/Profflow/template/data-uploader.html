@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profflow Builder</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        
+
+        .divider {
+            margin: 0px;
+            padding: 0px;
+
+
+
+
+        }
+
+        hr {
+            background-color: #8343cc;
+        }
+
+        .sidenav a {
+            text-decoration: none;
+            color: white;
+
+        }
+
+        .sidenav a:hover {
+            color: aqua;
+            text-decoration: none;
+        }
+
+        .sidenav p {
+            display: inline;
+
+        }
+
+        .sidenav h2 {
+            display: none;
+        }
+
+        .sidenav .user:hover {
+            color: black;
+        }
+
+
+        .sidenav {
+            width: 25%;
+            position: fixed;
+            height: 100%;
+            background-color: #6c1ec5;
+            left: 0;
+            z-index: 2;
+            padding-left: 20px;
+            font-size: 20px;
+            color: white;
+            font-weight: 500;
+            letter-spacing: 1px;
+            line-height: 1.4;
+
+        }
+
+        .formside {
+            width: 75%;
+
+            position: absolute;
+            right: 0;
+            padding-left: 40px;
+            padding-right: 40px;
+
+        }
+
+        @media screen and (max-width: 600px) {
+            .sidenav {
+                width: 50px;
+            }
+
+            .formside {
+                width: 90%;
+            }
+
+            .sidenav p {
+                display: none;
+            }
+
+            .sidenav h1 {
+                display: none;
+            }
+
+            .sidenav h2 {
+                display: inline;
+            }
+            .formside{
+                width: 85%;
+                padding-right: 10px;
+                padding-left: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <div class="divider">
+        <div class="sidenav">
+            <h2><img src="/static/profflow logo.png" alt="" height="35px"></h2>
+            <h1 class="text-center hider"><img src="/static/profflow logo.png" alt="" height="100px"><br>Profflow</h1><br><br>
+            <hr>
+            <i class="far fa-user-circle" title="{{ user.get_username }}"> </i>
+            <p class="user"> welcome {{ user.get_username }} !!</p>
+            <hr><br><br>
+            <a href="/"><i class="fa fa-home"></i>
+                <p class="hider"> Home</p><a><br><br>
+                    <a href="/user/search"><i class="fa fa-search"></i>
+                        <p class="hider"> Find user</p>
+                    </a><br><br>
+                    <a href="/user/"><i class="fa fa-user"></i>
+                        <p class="hider"> Profile</p>
+                    </a><br><br>
+                    <a href="/user/update"><i class="fas fa-edit"></i>
+                        <p class="hider"> Manage profflow</p>
+                    </a><br><br>
+                    <a href="/{{ user.get_username }}"><i class="fa fa-globe"> </i>
+                        <p class="hider">Your profflow</p>
+                    </a><br>
+                    
+                    <hr><br>
+
+                    <a href="https://tirtharajsinha.github.io/webfiles/portfolio_v2.0/"><i class="fa fa-paper-plane"> </i>
+                        <p> Contact Developer</p>
+                    </a><br><br>
+                    <a href="/user/logout"><i class="fa fa-crosshairs"></i>
+                        <p> logout</p>
+                    </a>
+
+
+
+
+
+
+
+        </div>
+
+
+
+        <div class="formside">
+            <div class=" container my-0 px-0 mb-3">
+
+                <h1 class="text-center">Upload your Profflow data here</h1><br>
+                <hr><br>
+            </div><br>
+            <div class="container pd-4 mb-5">
+                <form class="form" method="POST" action="makeport" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="firstname">FirstName</label>
+                        <input type="text" class="form-control .bg-transparent" id="firstname" name="firstname"
+                            placeholder="Enter your firstname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Lastname">LastName</label>
+                        <input type="text" class="form-control" id="lastname" name="lastname"
+                            placeholder="Enter your lastname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">contact no.</label>
+                        <input type="phone" class="form-control" id="phone" name="phone"
+                            placeholder="enter your your phone no.">
+                    </div>
+                    <div class="form-group">
+                        <label for="bio">Bio</label>
+                        <textarea class="form-control" id="bio" name="bio" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Avatar</label>
+                        <input type="file" id="image" name="image" class="form-control" required autofocus><br>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="website">website</label>
+                        <input type="text" class="form-control" id="website" name="website"
+                            placeholder="enter your website link">
+                    </div>
+                    <div class="form-group">
+                        <label for="instagram">instagram</label>
+                        <input type="text" class="form-control" id="instagram" name="instagram"
+                            placeholder="enter your profile link">
+                    </div>
+                    <div class="form-group">
+                        <label for="facebook">facebook</label>
+                        <input type="text" class="form-control" id="facebook" name="facebook"
+                            placeholder="enter your profile link">
+                    </div>
+                    <div class="form-group">
+                        <label for="twitter">twitter</label>
+                        <input type="text" class="form-control" id="twitter" name="twitter"
+                            placeholder="enter your profile link">
+                    </div>
+                    <div class="form-group">
+                        <label for="other">other link</label><br>
+                        put data in mentioned form..[sitename1:link1 + sitename2:link2 + ...],make sure that your links
+                        starts with
+                        'https' not "http"
+                        <textarea class="form-control" id="other" name="other" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="highlight">highlights</label><br>
+                        put data in mentioned form..[title1:description1 + title2:description2 + ...]
+                        <textarea class="form-control" id="highlight" name="highlight" rows="3" required></textarea>
+                    </div>
+
+                    <button class="btn btn-primary" type="submit">Build Profflow</button>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

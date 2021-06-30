@@ -1,0 +1,381 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    background-color: rgb(31, 29, 19);
+    overflow-x: hidden;
+  }
+  
+  .bg {
+    /* The image used */
+    background-image: url("banner-bg.jpg");
+  
+    /* Full height */
+    height: 100%; 
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+  }
+
+  .bg h1{
+      font-size: 140px;
+      color:white;
+      position: relative;;
+      top:300px;
+      text-align: center;
+      margin: 0px;
+      background: -webkit-linear-gradient(rgb(21, 230, 195), rgb(110, 91, 194));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 3px;
+      font-family:cursive;
+      font-weight: 600;
+      
+
+  }
+  .bg img{
+      position: relative;
+      height: 150px;
+
+  }
+
+  .bg p{
+      font-size: 30px;
+      font-weight: 600;
+      position: relative;
+      top: 20px;
+      left:85%;
+      margin: 0px;
+      width:150px;
+      height: 50px;
+      background-color: white;
+      color:black;
+      border-radius: 25px;
+      line-height: 45px;
+      background: linear-gradient(to right, #ff00ff 0%, #9012e4 100%);
+      box-shadow: 0 4px 8px 0 rgb(209, 12, 166), 0 6px 20px 0 rgba(206, 15, 126, 0.712);
+      transition:box-shadow 1s;
+      cursor: pointer;
+      
+
+  }
+  .bg p:hover{
+    background: linear-gradient(to right, #13d654 40%, #ff00ff 100%);
+    box-shadow: 0 4px 8px 0 rgb(12, 209, 45), 0 6px 20px 0 rgba(15, 168, 206, 0.712);
+  }
+.h1{
+    padding-top: 100px;
+    padding-bottom: 200px;
+    text-align: center;
+    color:rgb(223, 159, 75);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+span{
+    color: darkcyan;
+}
+
+.leftdes{
+    position: relative;
+    left:25%;
+    width:30%;
+    color:rgb(150, 111, 60);
+    font-size: 20px;
+    letter-spacing: 1px;
+    line-height: 1.4;
+
+}
+.rightimg{
+    position: relative;
+    left:30%;
+    top:-20px;
+    width: 900px;
+    height: auto;
+    align-content: flex-end;
+    overflow: hidden;
+    border-radius: 10px;
+    
+    filter:opacity(.7);
+    border-radius: 10px;
+    box-shadow: 0 10px 10px rgb(180, 160, 115);
+    transition: filter 2s;
+    transition: box-shadow 1s;
+    
+    
+}
+.rightimg:hover{
+    filter: sepia(20%);
+    box-shadow: 0 15px 20px rgb(180, 160, 115);
+}
+.first{
+    display: flex;
+}
+
+.rightdes{
+    position: relative;
+    left:65%;
+    width:30%;
+    color:rgb(150, 111, 60);
+    font-size: 20px;
+    letter-spacing: 1px;
+    line-height: 1.4;
+
+}
+.leftimg{
+    position: relative;
+    right: 30%;
+    top:-20px;
+    width: 900px;
+    height: auto;
+    align-content: flex-end;
+    overflow: hidden;
+    border-radius: 10px;
+    filter:brightness(0.7) contrast(1) sepia(1) hue-rotate(115deg) saturate(1.5);
+    
+    border-radius: 10px;
+    box-shadow: 0 10px 10px rgb(180, 160, 115);
+    
+    transition:filter 2s;
+    
+    
+}
+.leftimg:hover{
+    filter: brightness(1) contrast(1) sepia(0) hue-rotate(
+        0deg
+        ) saturate(1);
+    box-shadow: 0 10px 15px rgb(180, 160, 115);
+}
+.second{
+    display: flex;
+    margin-top: 300px;
+}
+
+.expect{
+    width:60%;
+    color:rgb(238, 204, 165);
+    margin: auto;
+    margin-top: 150px;
+    margin-bottom: 200px;
+    
+    
+    
+    
+}
+.exp{
+    display:flex;
+    justify-content: space-around;
+    
+    letter-spacing: 1px;
+    font-weight: 100;
+    padding-top: 50px;
+}
+.exp div{
+       
+    padding-right: 15px;
+}
+footer{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(255, 246, 217);
+    color:rgb(63, 59, 41);
+    padding-top: 20px;
+    padding-bottom: 30px;
+    
+}
+footer div{
+    display: flex;
+    
+}
+footer div p{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+  @media screen and (max-width: 1000px) {
+    .bg{
+        background-image: url("static/banner-bg-mob.jpg");
+
+    }
+    .bg h1{
+        font-size: 70px;
+        top:350px;
+    }
+    .bg p{
+        left:60%;
+    }
+    .leftdes{
+        width: 60%;
+        left:20%;
+
+    }
+    .first{
+        display:inline;
+
+    }
+    .rightimg{
+        top:50px;
+        width:60%;
+        height: auto;
+        margin: auto;
+        left:20%;
+    }
+    .rightdes{
+        width: 60%;
+        left:20%;
+        margin-top: 100px;
+
+    }
+    .second{
+        display:inline;
+        
+    }
+    .leftimg{
+        top:50px;
+        width:60%;
+        height: auto;
+        margin: auto;
+        left:20%;
+    }
+    .expect{
+        
+    }
+    footer{
+        display: inline-block;
+        width: 100%;
+        
+    }
+    footer div{
+        justify-content: center;
+    }
+    footer p{
+        text-align: center;
+    }
+}
+
+
+.neon a{
+    position: relative;
+    display:inline-block;
+    padding: 25px 30px;
+    margin:40px 0;
+    font-size: 24px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    letter-spacing: 4px;
+    color:#03e9f4;
+    /*-webkit-box-reflect:below 1px linear-gradient(transparent,#0005);*/
+  }
+  
+  
+  
+  
+  .neon a:hover{
+    background: #03e9f4;
+    color:#050801;
+    box-shadow: 0 0 5px #03e9f4,0 0 25px #03e9f4,0 0 50px #03e9f4,0 0 200px #03e9f4
+  }
+  .neon a span{
+    position: absolute;
+    display: block;
+  }
+  .neon a span:nth-child(1)
+  {
+    top: 0;
+    left:0;
+    width:100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,#03e9f4);
+    animation: animate1 1s linear infinite;
+  
+  }
+  
+  
+  @keyframes animate1 {
+  
+    0%{
+      left:-100%;
+    }
+    50%,100%{
+      left:100%;
+    }
+  }
+  
+  
+  .neon a span:nth-child(2)
+  {
+    top: -100%;
+    right:0;
+    width:2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,#03e9f4);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+  
+  }
+  
+  
+  @keyframes animate2 {
+  
+    0%{
+      top:-100%;
+    }
+    50%,100%{
+      top:100%;
+    }
+  }
+  
+  
+  
+  
+  .neon a span:nth-child(3)
+  {
+    bottom:0;
+    right:-100%;
+    width:100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,#03e9f4);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.5s;
+  
+  }
+  
+  
+  @keyframes animate3 {
+  
+    0%{
+      right:-100%;
+    }
+    50%,100%{
+      right:100%;
+    }
+  }
+  
+  
+  .neon a span:nth-child(4)
+  {
+    bottom:-100%;
+    left:0;
+    width:2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#03e9f4);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+  
+  }
+  
+  
+  @keyframes animate4 {
+  
+    0%{
+      bottom:-100%;
+    }
+    50%,100%{
+      bottom:100%;
+    }
+  }

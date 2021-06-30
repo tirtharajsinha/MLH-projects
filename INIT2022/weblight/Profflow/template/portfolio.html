@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profflow.{{data.username}}</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: #1a1818;
+            color: white;
+        }
+
+        .topnev {
+            background-color: #282e31;
+
+            width: 100%;
+            height: 40px;
+            margin: 0px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 0px;
+            padding-right: 0px;
+
+        }
+
+        .topnev p {
+            color: white;
+            font-size: 35px;
+            font-weight: 300px;
+            letter-spacing: 1px;
+            margin: 0px;
+            padding: 0px;
+            padding-left: 10px;
+            display: inline;
+        }
+
+        .container {
+            margin-top: 20px;
+            ;
+            padding: 50px;
+            border: 2px solid rgb(49, 48, 46);
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .left {
+            width: 25%;
+
+        }
+
+        .right {
+            width: 65%;
+            border-left: 2px solid rgb(51, 50, 50);
+            padding-left: 50px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 15px;
+            letter-spacing: 2px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        a:hover {
+            color: blanchedalmond
+        }
+
+        .right,
+        .a {
+            font-size: 20px;
+        }
+
+        .avatar {
+            height: 200px;
+            width: auto;
+            border-radius: 50%;
+
+
+        }
+
+        .name {
+            font-size: 150%;
+            font-weight: 400;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            letter-spacing: -1px;
+            padding-bottom: 0px;
+            margin-bottom: 5px;
+        }
+
+        .username {
+            font-size: 20px;
+            font-weight: 10;
+            font-family: cursive;
+            color: silver;
+            margin-top: 5px;
+        }
+
+        .bio {
+            font-size: 18px;
+            letter-spacing: 1px;
+            font-weight: 100;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-inline-start: 1px;
+            line-height: 1.2;
+        }
+
+        .highlighter {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .highlight {
+            width: 45%;
+            min-width: 300px;
+            border: 2px solid rgb(51, 50, 50);
+            border-radius: 10px;
+            min-height: 150px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            padding: 5px;
+
+        }
+
+        .highlight h3 {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            color: #9fd9dd;
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-around;
+            background-color: rgb(255, 246, 217);
+            color: rgb(63, 59, 41);
+            padding-top: 20px;
+            padding-bottom: 30px;
+
+        }
+
+        footer div {
+            display: flex;
+            margin-left: 10px;
+
+        }
+
+        .join {
+            width: 120px;
+            background-color: yellowgreen;
+            color: black;
+            border-radius: 20px;
+            padding-top: 10px;
+            text-align: center;
+            padding-left: 10px;
+
+            font-weight: 600;
+            letter-spacing: 1px;
+
+
+
+
+        }
+
+        .join p {
+            margin: 0;
+        }
+
+        footer div p {
+            padding-left: 7px;
+            padding-right: 7px;
+        }
+
+        .search {
+            float: right;
+            margin-right: 20px;
+            background-color: rgb(150, 153, 127);
+            color: rgb(33, 30, 48);
+            font-weight: 500;
+            font-size: 25px;
+            letter-spacing: 1px;
+            font-family: 'Courier New', Courier, monospace;
+            height: 90%;
+            border-radius: 10px;
+            outline: -webkit-focus-ring-color auto 0px;
+            transition: box-shadow 1s;
+
+        }
+
+        .search:hover {
+            box-shadow: 0px 4px 10px rgba(164, 196, 25, 0.541);
+        }
+
+
+
+
+
+
+
+        @media screen and (max-width: 1025px) {
+            .container {
+                padding: 10px;
+
+            }
+
+            .right {
+                width: 85%;
+                margin: 10px;
+            }
+
+            .left {
+                width: 85%;
+                margin: 10px;
+            }
+
+            .right {
+                padding-top: 20px;
+                padding-left: 10px;
+                border-left: 0px solid rgb(49, 48, 46);
+                border-top: 2px solid rgb(51, 50, 50);
+            }
+
+            footer {
+                display: block;
+                width: 100%;
+
+            }
+
+            .join {
+                margin: auto;
+            }
+
+            footer div {
+                justify-content: center;
+            }
+
+            footer p {
+                text-align: center;
+            }
+
+            .search span {
+                display: none;
+            }
+
+            .search {
+                background-color: cyan;
+                color: black;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="topnev">
+        <p></p>
+        <p><img src="static/profflow logo.png" alt="" height="42px">Profflow</p> <i class="fa fa-handshake-o"></i>
+        connecting people
+       
+        <a href="/user/search" style="text-decoration: none;" title="search"><button class="search fa fa-search-plus">
+                <span>Find another
+                    User</span></button></a>
+
+
+
+    </div>
+    <div class="container">
+        <div class="left">
+            <img class="avatar" src="{{data.pic.url}}" alt="Avatar"><br><br>
+            <hr>
+            <p class="name">{{data.firstname}} {{data.lastname}}</p>
+            <p class="username">@{{data.username}}</p><br>
+            <p class="bio">{{data.bio}}</p><br><br>
+            <hr>
+            <a href="mailto:email" class=""><i class="fa fa-envelope" style="font-size:24px"></i>
+                {{data.email}}</a><br><br>
+            <a href="{{data.website}}"><i class="fa fa-globe"> </i> Website </a><br><br>
+            <i class="fa fa-phone"> </i> {{data.phone}}
+
+        </div>
+
+
+
+        <div class="right">
+            <ul>
+                <li><a href="{{data.facebook}}" class="fa fa-facebook"> facebook</a></li><br>
+                <li><a href="{{data.twitter}}" class="fa fa-twitter"> twitter</a></li><br>
+                <li><a href="{{data.instagram}}" class="fa fa-instagram"> instagram</a></li><br>
+                {% for link in otherlinks %}
+                <li><a href="{{link.1}}">{{link.0}}</a></li><br>
+
+                {% endfor %}
+            </ul>
+            <hr>
+            <div class="highlighter">
+                {% for high in highlights %}
+                <div class="highlight">
+                    <h3>{{high.0}}</h3>
+                    <hr>
+                    {{high.1}}
+                </div>
+
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <div>
+            <p>Terms of Use</p>
+            <p>Privacy</p>
+            <p>Code of conduct</p>
+            <p>releses</p>
+            <p>FAQ</p>
+            <p>Contact</p>
+        </div>
+        <a href="/" style="text-decoration: none;">
+            <div class="join">
+                <p>Join Profflow</p>
+            </div>
+        </a>
+        <p>A <i class="fa fa-code"></i> initiative from Tirtharaj Sinha <i class="fa fa-star-o"></i> </p>
+    </footer>
+</body>
+
+</html>

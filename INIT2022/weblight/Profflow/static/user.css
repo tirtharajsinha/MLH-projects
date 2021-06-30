@@ -1,0 +1,115 @@
+.divider {
+    margin: 0px;
+    padding: 0px;
+
+
+
+
+}
+
+hr {
+    background-color: #8343cc;
+}
+
+.sidenav a {
+    text-decoration: none;
+    color: white;
+
+}
+
+.sidenav a:hover {
+    color: aqua;
+    text-decoration: none;
+}
+
+.sidenav p {
+    display: inline;
+
+}
+
+.sidenav h2 {
+    display: none;
+}
+
+.sidenav .user:hover {
+    color: black;
+}
+
+
+.sidenav {
+    width: 25%;
+    position: fixed;
+    height: 100%;
+    background-color: #1ec526;
+    left: 0;
+    z-index: 2;
+    padding-left: 20px;
+    font-size: 20px;
+    color: white;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 1.4;
+    overflow-y: scroll;
+
+}
+
+.userside {
+    width: 75%;
+
+    position: absolute;
+    right: 0;
+    padding-left: 40px;
+    padding-right: 30px;
+
+}
+.welcome{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    color:rgb(43, 226, 52);
+}
+label{
+    color:  rgb(43, 226, 52) ;
+    font-weight: bold;
+}
+button{
+    background-color: rgb(43, 226, 52);
+}
+
+@media screen and (max-width: 600px) {
+    .sidenav {
+        width: 50px;
+        background-color: rgb(26, 230, 213);
+    }
+
+    .formside {
+        width: 90%;
+    }
+
+    .sidenav p {
+        display: none;
+    }
+
+    .sidenav h1 {
+        display: none;
+    }
+
+    .sidenav h2 {
+        display: inline;
+    }
+    .userside{
+        width: 85%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .welcome{
+        font-size: 30px;
+        color: rgb(26, 230, 213);
+
+    }
+    label{
+        color: rgb(26, 230, 213);
+    }
+    button{
+        background-color: rgb(26, 230, 213);
+    }
+}

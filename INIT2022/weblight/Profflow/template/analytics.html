@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profflow Analytics</title>
+
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .divider {
+            margin: 0px;
+            padding: 0px;
+
+
+
+
+        }
+
+        hr {
+            background-color: #8343cc;
+        }
+
+        .sidenav a {
+            text-decoration: none;
+            color: white;
+
+        }
+
+        .sidenav a:hover {
+            color: aqua;
+            text-decoration: none;
+        }
+
+        .sidenav p {
+            display: inline;
+
+        }
+
+        .sidenav h2 {
+            display: none;
+        }
+
+        .sidenav .user:hover {
+            color: black;
+        }
+
+
+        .sidenav {
+            width: 25%;
+            position: fixed;
+            height: 100%;
+            background-color: #6c1ec5;
+            left: 0;
+            z-index: 2;
+            padding-left: 20px;
+            padding-bottom: 50px;
+            font-size: 20px;
+            color: white;
+            font-weight: 500;
+            letter-spacing: 1px;
+            line-height: 1.4;
+            overflow-y: scroll;
+
+        }
+
+        .formside {
+            width: 75%;
+            padding: 5px;
+            padding-left: 40px;
+            padding-right: 20px;
+            position: absolute;
+            right: 0;
+            background-color: #18222F;
+            color: cornsilk;
+
+        }
+
+        .totaldata {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .totaldata div {
+            width: 45%;
+            min-height: 100px;
+
+        }
+
+        .totalreach {
+            text-align: center;
+            padding-top: 50px;
+
+        }
+
+        .totalreach h1 {
+            font-size: 70px;
+
+        }
+
+        .totalreach h4 {
+            color: rgb(121, 119, 114);
+        }
+
+        .totalreach hr {
+            height: 10px;
+            background-color: crimson;
+            border-radius: 5px;
+        }
+
+
+        .wrapper {
+            /* position: absolute; */
+            width: auto;
+            height: auto;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .donut {
+            flex: 1;
+            padding: 0 20px;
+            margin: auto;
+        }
+
+        .donutchart {
+            padding: 0;
+        }
+
+        .bar {
+            /* background-color: black; */
+            margin: auto;
+            height: 300px;
+            width: 50%;
+            border-left: 2px solid white;
+            border-bottom: 2px solid white;
+            padding-top: 5px;
+
+        }
+
+        .w1,
+        .w2,
+        .w3,
+        .w4 {
+            margin-top: 30px;
+            height: 40px;
+            min-width: 10%;
+            width: 0;
+            transition: width 1s;
+
+
+        }
+
+
+        .w1 {
+            animation: barchart1 2s linear;
+            animation-fill-mode: forwards;
+            border-bottom-right-radius: 10px;
+            animation-delay: 2s;
+            background-color: blueviolet;
+        }
+
+        .w2 {
+            animation: barchart2 2s linear;
+            animation-fill-mode: forwards;
+            border-bottom-right-radius: 10px;
+            animation-delay: 2s;
+            background-color: rgb(43, 226, 67);
+        }
+
+        .w3 {
+            animation: barchart3 2s linear;
+            animation-fill-mode: forwards;
+            border-bottom-right-radius: 10px;
+            animation-delay: 2s;
+            background-color: rgb(226, 43, 211);
+        }
+
+        .w4 {
+            animation: barchart4 2s linear;
+            animation-fill-mode: forwards;
+            border-bottom-right-radius: 10px;
+            animation-delay: 2s;
+            background-color: rgb(226, 214, 43);
+        }
+
+        .bar h3 {
+            color: rgba(255, 255, 255, 0.678);
+            padding-left: 20px;
+            font-size: 30px;
+
+        }
+
+        .bar h4 {
+            position: relative;
+            color: rgb(20, 236, 226);
+            left: -75px;
+            z-index: 10;
+            top: -45px;
+            font-size: 20px;
+            padding-left:10px;
+
+
+        }
+
+        @keyframes barchart1 {
+            0% {
+                width: 0%;
+
+            }
+
+            100% {
+                width: {{week.0}}%;
+            }
+        }
+
+        @keyframes barchart2 {
+            0% {
+                width: 0%;
+
+            }
+
+            100% {
+                width: {{week.1}}%;
+            }
+        }
+
+        @keyframes barchart3 {
+            0% {
+                width: 0%;
+
+            }
+
+            100% {
+                width: {{week.2}}%;
+            }
+        }
+
+        @keyframes barchart4 {
+            0% {
+                width: 0%;
+
+            }
+
+            100% {
+                width: {{week.3}}%;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .sidenav {
+                width: 50px;
+                padding-left: 10px;
+            }
+
+            .formside {
+                width: 100%;
+            }
+
+            .sidenav p {
+                display: none;
+            }
+
+            .sidenav h1 {
+                display: none;
+            }
+
+            .sidenav h2 {
+                display: inline;
+            }
+
+            .formside {
+                width: 100%;
+                padding-right: 10px;
+                padding-left: 10px;
+            }
+
+            .totaldata {
+                flex-direction: column;
+            }
+
+            .totaldata .totalreach {
+                width: 99%;
+                padding: 15%;
+            }
+
+            .donutchart {
+                width: auto;
+                padding: 10%;
+            }
+            .bar{
+                margin-left: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <div class="divider">
+        <div class="sidenav">
+            <br><br>
+            <h2><img src="/static/profflow logo.png" alt="" height="35px"></h2>
+            <h1 class="text-center hider"><img src="/static/profflow logo.png" alt="" height="100px"><br>Profflow</h1>
+            <br><br>
+            <hr>
+            <i class="far fa-user-circle" title="{{ user.get_username }}"> </i>
+            <p class="user"> welcome {{ user.get_username }} !!</p>
+            <hr><br><br>
+            <a href="/"><i class="fa fa-home"></i>
+                <p class="hider"> Home</p><a><br><br>
+                    <a href="/user/search"><i class="fa fa-search"></i>
+                        <p class="hider"> Find user</p>
+                    </a><br><br>
+                    <a href="/user/"><i class="fa fa-user"></i>
+                        <p class="hider"> Profile</p>
+                    </a><br><br>
+                    <a href="/user/update"><i class="fas fa-edit"></i>
+                        <p class="hider"> Manage profflow</p>
+                    </a><br><br>
+                    <a href="/{{ user.get_username }}"><i class="fa fa-globe"> </i>
+                        <p class="hider">Your profflow</p>
+                    </a><br><br>
+                    <a href="/user/analytics"><i class="fa fa-bar-chart-o"> </i>
+                        <p class="hider">Analytics</p>
+                    </a><br>
+                    <hr><br>
+
+                    <a href="https://tirtharajsinha.github.io/webfiles/portfolio_v2.0/"><i class="fa fa-paper-plane">
+                        </i>
+                        <p> Contact Developer</p>
+                    </a><br><br>
+                    <a href="/user/logout"><i class="fa fa-crosshairs"></i>
+                        <p> logout</p>
+                    </a>
+
+
+
+
+
+
+
+        </div>
+
+
+
+        <div class="formside">
+            <div class="container-fluid my-0 px-0 mb-3 mt-5">
+
+                <h1 class="text-center"
+                    style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 900;">
+                    <u>Analytics </u>
+                </h1><br>
+
+                <br>
+
+            </div><br>
+            <div class="container pd-4 mb-5">
+                <div class="totaldata">
+                    <div class="totalreach">
+                        <h1>{{analytic.total}}</h1>
+                        <hr width="200px">
+                        <h4>Total reach</h4>
+
+                    </div>
+                    <div class="donutchart">
+                        <div class="wrapper">
+                            <div class="donut chart" data-size="200" data-value="{{growth}}" data-arrow="up">
+                            </div>
+                        </div>
+                        <br>
+                        <h5 class="text-center"> Monthly Growth</h5>
+                    </div>
+
+                </div>
+                <br>
+                <hr>
+                <div class="bar">
+                    <div class="w1">
+                        <h3>{{analytic.w1}}</h3>
+                        <h4>week 1</h4>
+                    </div>
+                    <div class="w2">
+                        <h3>{{analytic.w2}}</h3>
+                        <h4>week 2</h4>
+                    </div>
+                    <div class="w3">
+                        <h3>{{analytic.w3}}</h3>
+                        <h4>week 3</h4>
+                    </div>
+                    <div class="w4">
+                        <h3>{{analytic.w4}}</h3>
+                        <h4>week 4</h4>
+                    </div>
+                </div>
+                <h4 class="text-center">Month performance</h4>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script>
+        //
+        // Library
+        //
+
+        var Dial = function (donut) {
+            this.donut = donut;
+            this.size = this.donut.dataset.size;
+            this.strokeWidth = this.size / 8;
+            this.radius = (this.size / 2) - (this.strokeWidth / 2);
+            this.value = this.donut.dataset.value;
+            this.direction = this.donut.dataset.arrow;
+            this.svg;
+            this.defs;
+            this.slice;
+            this.overlay;
+            this.text;
+            this.arrow;
+            this.create();
+        }
+
+        Dial.prototype.create = function () {
+            this.createSvg();
+            this.createDefs();
+            this.createSlice();
+            this.createOverlay();
+            this.createText();
+            this.createArrow();
+            this.donut.appendChild(this.svg);
+        };
+
+        Dial.prototype.createSvg = function () {
+            var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            svg.setAttribute('width', this.size + 'px');
+            svg.setAttribute('height', this.size + 'px');
+            this.svg = svg;
+        };
+
+        Dial.prototype.createDefs = function () {
+            var defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
+            var linearGradient = document.createElementNS("http://www.w3.org/2000/svg", "linearGradient");
+            linearGradient.setAttribute('id', 'gradient');
+            var stop1 = document.createElementNS("http://www.w3.org/2000/svg", "stop");
+            stop1.setAttribute('stop-color', '#6E4AE2');
+            stop1.setAttribute('offset', '0%');
+            linearGradient.appendChild(stop1);
+            var stop2 = document.createElementNS("http://www.w3.org/2000/svg", "stop");
+            stop2.setAttribute('stop-color', '#78F8EC');
+            stop2.setAttribute('offset', '100%');
+            linearGradient.appendChild(stop2);
+            var linearGradientBackground = document.createElementNS("http://www.w3.org/2000/svg", "linearGradient");
+            linearGradientBackground.setAttribute('id', 'gradient-background');
+            var stop1 = document.createElementNS("http://www.w3.org/2000/svg", "stop");
+            stop1.setAttribute('stop-color', 'rgba(0, 0, 0, 0.2)');
+            stop1.setAttribute('offset', '0%');
+            linearGradientBackground.appendChild(stop1);
+            var stop2 = document.createElementNS("http://www.w3.org/2000/svg", "stop");
+            stop2.setAttribute('stop-color', 'rgba(0, 0, 0, 0.05)');
+            stop2.setAttribute('offset', '100%');
+            linearGradientBackground.appendChild(stop2);
+            defs.appendChild(linearGradient);
+            defs.appendChild(linearGradientBackground);
+            this.svg.appendChild(defs);
+            this.defs = defs;
+        };
+
+        Dial.prototype.createSlice = function () {
+            var slice = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            slice.setAttribute('fill', 'none');
+            slice.setAttribute('stroke', 'url(#gradient)');
+            slice.setAttribute('stroke-width', this.strokeWidth);
+            slice.setAttribute('transform', 'translate(' + this.strokeWidth / 2 + ',' + this.strokeWidth / 2 + ')');
+            slice.setAttribute('class', 'animate-draw');
+            this.svg.appendChild(slice);
+            this.slice = slice;
+        };
+
+        Dial.prototype.createOverlay = function () {
+            var r = this.size - (this.size / 2) - this.strokeWidth / 2;
+            var circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            circle.setAttribute('cx', this.size / 2);
+            circle.setAttribute('cy', this.size / 2);
+            circle.setAttribute('r', r);
+            circle.setAttribute('fill', 'url(#gradient-background)');
+            this.svg.appendChild(circle);
+            this.overlay = circle;
+        };
+
+        Dial.prototype.createText = function () {
+            var fontSize = this.size / 3.5;
+            var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+            text.setAttribute('x', (this.size / 2) + fontSize / 7.5);
+            text.setAttribute('y', (this.size / 2) + fontSize / 4);
+            text.setAttribute('font-family', 'Century Gothic, Lato');
+            text.setAttribute('font-size', fontSize);
+            text.setAttribute('fill', '#78F8EC');
+            text.setAttribute('text-anchor', 'middle');
+            var tspanSize = fontSize / 3;
+            text.innerHTML = 0 + '<tspan font-size="' + tspanSize + '" dy="' + -tspanSize * 1.2 + '">%</tspan>';
+            this.svg.appendChild(text);
+            this.text = text;
+        };
+
+        Dial.prototype.createArrow = function () {
+            var arrowSize = this.size / 10;
+            var arrowYOffset, m;
+            if (this.direction === 'up') {
+                arrowYOffset = arrowSize / 2;
+                m = -1;
+            }
+            else if (this.direction === 'down') {
+                arrowYOffset = 0;
+                m = 1;
+            }
+            var arrowPosX = ((this.size / 2) - arrowSize / 2);
+            var arrowPosY = (this.size - this.size / 3) + arrowYOffset;
+            var arrowDOffset = m * (arrowSize / 1.5);
+            var arrow = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            arrow.setAttribute('d', 'M 0 0 ' + arrowSize + ' 0 ' + arrowSize / 2 + ' ' + arrowDOffset + ' 0 0 Z');
+            arrow.setAttribute('fill', '#97F8F0');
+            arrow.setAttribute('opacity', '0.6');
+            arrow.setAttribute('transform', 'translate(' + arrowPosX + ',' + arrowPosY + ')');
+            this.svg.appendChild(arrow);
+            this.arrow = arrow;
+        };
+
+        Dial.prototype.animateStart = function () {
+            var v = 0;
+            var self = this;
+            var val = 50 + ((self.value + 1) / 2);
+
+            var latastart = setTimeout(function () {
+                var intervalOne = setInterval(function () {
+                    var p = +(v / val).toFixed(2);
+                    var a = (p < 0.95) ? 2 - (2 * p) : 0.05;
+                    v += a;
+                    // Stop
+                    if (v >= +self.value) {
+                        v = self.value;
+                        clearInterval(intervalOne);
+                    }
+                    self.setValue(v);
+                }, 10);
+
+
+            }, 2000);
+        };
+
+        Dial.prototype.animateReset = function () {
+            this.setValue(0);
+        };
+
+        Dial.prototype.polarToCartesian = function (centerX, centerY, radius, angleInDegrees) {
+            var angleInRadians = (angleInDegrees - 90) * Math.PI / 180.0;
+            return {
+                x: centerX + (radius * Math.cos(angleInRadians)),
+                y: centerY + (radius * Math.sin(angleInRadians))
+            };
+        }
+
+        Dial.prototype.describeArc = function (x, y, radius, startAngle, endAngle) {
+            var start = this.polarToCartesian(x, y, radius, endAngle);
+            var end = this.polarToCartesian(x, y, radius, startAngle);
+            var largeArcFlag = endAngle - startAngle <= 180 ? "0" : "1";
+            var d = [
+                "M", start.x, start.y,
+                "A", radius, radius, 0, largeArcFlag, 0, end.x, end.y
+            ].join(" ");
+            return d;
+        }
+
+        Dial.prototype.setValue = function (value) {
+            var myval = 50 + (value - 1) / 2;
+            var c = (myval / 100) * 360;
+            if (c === 360)
+                c = 359.99;
+            if (c > 360)
+                c = 359.99;
+            var xy = this.size / 2 - this.strokeWidth / 2;
+            var d = this.describeArc(xy, xy, xy, 180, 180 + c);
+            this.slice.setAttribute('d', d);
+            var tspanSize = (this.size / 3.5) / 3;
+            this.text.innerHTML = Math.floor(value) + '<tspan font-size="' + tspanSize + '" dy="' + -tspanSize * 1.2 + '">%</tspan>';
+        };
+
+        //
+        // Usage
+        //
+
+        var donuts = document.getElementsByClassName("chart");
+        var dial = new Dial(donuts[0]);
+        dial.animateStart();
+            // setTimeout(,1000);
+    </script>
+</body>
+
+</html>
