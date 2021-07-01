@@ -9,6 +9,6 @@ project to help manage schedules! Some ideas include developing this hack for yo
 ## How I built it
 > We used frontend and d web technologies, html5 ,css3  and javascript
 ## What I learned
-> I learned a lot about 
+> I learned a lot about web technologies.
 ## What's next for Schedulo
 > Upgrade it to a desktop app.
