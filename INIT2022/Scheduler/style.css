@@ -1,0 +1,43 @@
+.form-container {
+  width: 50%;
+  margin: auto;
+
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 50px;
+  background: linear-gradient(to top left, #ffcc00 0%, #ffff00 100%);
+}
+
+.in-back {
+  background-color: transparent;
+  border-color: tan;
+  border-radius: 20px;
+  color: black;
+}
+
+.items {
+  width: 60%;
+  margin: auto;
+  border: 1px solid rgb(7, 223, 169);
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 50px;
+}
+
+.mar-center {
+  margin: auto;
+}
+table {
+  border-collapse: separate;
+}
+thead {
+  background-color: rgb(226, 180, 64);
+}
+#tablebody tr {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-bottom: 5px;
+}
+#tablebody tr:hover {
+  background-color: rgba(128, 255, 0, 0.637);
+}
