@@ -1,1 +1,1 @@
-# LHD-projects
+# Major Hacking League - projects
