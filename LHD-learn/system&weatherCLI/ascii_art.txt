@@ -1,0 +1,51 @@
+windows
+          ,-~¨^  ^¨-,           _,#
+          //////////// ;^-._...,¨/ #
+          //////////// ///////////  #
+         //////////// ///////////   #
+        //////////// ///////////    #
+       /,.-:''-,_ / ///////////     #
+      _,.-:--._ ^  ^:-._ __../      #
+     //////////// /¨:._¨_.;       #
+    //////////// ///////////        #
+   //////////// ///////////         #
+  //////////// ///////////          #
+ /_,.--:^-._/ ///////////           #
+^            ^¨¨-._.:^'           #
+
+elementary
+       eeeeeeeeeeeeeeeee
+      eeeeeeeeeeeeeeeeeeeeeee
+    eeeee  eeeeeeeeeeee   eeeee
+  eeee   eeeee       eee     eeee
+ eeee   eeee          eee     eeee
+eeee    eee            eee      eee
+eee   eee            eee        eee
+ee    eee           eeee       eeee
+ee    eee         eeeee      eeeeee
+ee    eee       eeeee      eeeee ee
+eee   eeee   eeeeee      eeeee  eee
+eee    eeeeeeeeee     eeeeee    eee
+ eeeeeeeeeeeeeeeeeeeeeeee    eeeee
+  eeeeeeee eeeeeeeeeeee      eeee
+    eeeee                 eeeee
+      eeeeeee         eeeeeee
+         eeeeeeeeeeeeeeeee
+
+mint
+${c1}MMMMMMMMMMMMMMMMMMMMMMMMMmds+.
+MMm----::-://////////////oymNMd+`
+MMd      ${c2}/++                ${c1}-sNMd:
+MMNso/`  ${c2}dMM    `.::-. .-::.` ${c1}.hMN:
+ddddMMh  ${c2}dMM   :hNMNMNhNMNMNh: ${c1}`NMm
+    NMm  ${c2}dMM  .NMN/-+MMM+-/NMN` ${c1}dMM
+    NMm  ${c2}dMM  -MMm  `MMM   dMM. ${c1}dMM
+    NMm  ${c2}dMM  -MMm  `MMM   dMM. ${c1}dMM
+    NMm  ${c2}dMM  .mmd  `mmm   yMM. ${c1}dMM
+    NMm  ${c2}dMM`  ..`   ...   ydm. ${c1}dMM
+    hMM- ${c2}+MMd/-------...-:sdds  ${c1}dMM
+    -NMm- ${c2}:hNMNNNmdddddddddy/`  ${c1}dMM
+     -dMNs-${c2}``-::::-------.``    ${c1}dMM
+      `/dMNmy+/:-------------:/yMMM
+         ./ydNMMMMMMMMMMMMMMMMMMMMM
+            .MMMMMMMMMMMMMMMMMMM
