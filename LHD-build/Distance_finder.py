@@ -47,14 +47,12 @@ def gloc_address(address):
         return [lat, lng]
 
 
-def finder(add1, add2, unit="kilometer"):
-    loc1 = gloc_address(add1)
-    loc2 = gloc_address(add2)
+def finder(loc1, loc2, unit="kilometer"):
     lat1 = radians(loc1[0])
     lat2 = radians(loc2[0])
     lon1 = radians(loc1[1])
     lon2 = radians(loc2[1])
-
+    print(loc1, loc2)
     # Haversine formula
     dlon = lon2 - lon1
     dlat = lat2 - lat1
@@ -70,9 +68,14 @@ def finder(add1, add2, unit="kilometer"):
         return result * 1000
     return result
 
+def distance_finder(place1,place2,unit):
+    loc1 = gloc_address(place1)
+    loc2 = gloc_address(place2)
+    return finder(loc1, loc2, unit=unit)
 
-place1 = "katwa"
+place1 = "london"
 place2 = "kolkata"
-unit = "Meter"
-print("distance between {} and {} is : ".format(place1, place2), finder("katwa", "kolkata", unit=unit),
+
+unit = "KM"
+print("Distance between {} and {} is : ".format(place1, place2), distance_finder(place1, place2, unit=unit),
       unit)
